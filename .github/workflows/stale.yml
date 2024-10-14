@@ -14,7 +14,6 @@ jobs:
   stale:
 
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'wg-easy-peasy'
     permissions:
       issues: write
       pull-requests: write
