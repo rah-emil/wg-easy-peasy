@@ -1,5 +1,5 @@
 services:
-  wg-easy:
+  wg-easy-peasy:
     build:
       dockerfile: ./Dockerfile
     command: npm run serve

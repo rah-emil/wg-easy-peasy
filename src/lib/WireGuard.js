@@ -453,7 +453,7 @@ Endpoint = ${WG_HOST}:${WG_CONFIG_PORT}`;
       wireguardLatestHandshakeSeconds += `wireguard_latest_handshake_seconds{interface="wg0",enabled="${client.enabled}",address="${client.address}",name="${client.name}"} ${client.latestHandshakeAt ? (new Date().getTime() - new Date(client.latestHandshakeAt).getTime()) / 1000 : 0}\n`;
     }
 
-    let returnText = '# HELP wg-easy and wireguard metrics\n';
+    let returnText = '# HELP wg-easy-peasy and wireguard metrics\n';
 
     returnText += '\n# HELP wireguard_configured_peers\n';
     returnText += '# TYPE wireguard_configured_peers gauge\n';

@@ -26,7 +26,7 @@ COPY --from=build_node_modules /app /app
 # than what runs inside of docker.
 COPY --from=build_node_modules /node_modules /node_modules
 
-# Copy the needed wg-password scripts
+# Copy the needed wg scripts
 COPY --from=build_node_modules /app/wgcli.sh /bin/wgcli
 RUN chmod +x /bin/wgcli
 

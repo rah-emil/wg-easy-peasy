@@ -2,7 +2,7 @@
 
 [![Build & Publish Docker Image to Docker Hub](https://github.com/rah-emil/wg-easy-peasy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/rah-emil/wg-easy-peasy/actions/workflows/deploy.yml)
 [![Lint](https://github.com/rah-emil/wg-easy-peasy/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/rah-emil/wg-easy-peasy/actions/workflows/lint.yml)
-![Docker](https://img.shields.io/docker/pulls/weejewel/wg-easy.svg)
+![Docker](https://img.shields.io/docker/pulls/rah-emil/wg-easy-peasy.svg)
 [![Sponsor](https://img.shields.io/github/sponsors/weejewel)](https://github.com/sponsors/WeeJeWel)
 ![GitHub Stars](https://img.shields.io/github/stars/rah-emil/wg-easy-peasy)
 
@@ -75,7 +75,7 @@ docker run --detach \
   --env PASSWORD_HASH='<🚨YOUR_ADMIN_PASSWORD_HASH>' \
   --env PORT=51821 \
   --env WG_PORT=51820 \
-  --volume ~/.wg-easy:/etc/wireguard \
+  --volume ~/.wg-easy-peasy:/etc/wireguard \
   --publish 51820:51820/udp \
   --publish 51821:51821/tcp \
   --cap-add NET_ADMIN \
@@ -140,8 +140,8 @@ These options can be configured by setting environment variables using `-e KEY="
 To update to the latest version, simply run:
 
 ```shell
-docker stop wg-easy
-docker rm wg-easy
+docker stop wg-easy-peasy
+docker rm wg-easy-peasy
 docker pull ghcr.io/rah-emil/wg-easy-peasy
 ```
 
