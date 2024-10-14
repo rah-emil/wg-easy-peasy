@@ -242,6 +242,14 @@ Endpoint = ${WG_HOST}:${WG_CONFIG_PORT}`;
 
     const config = await this.getConfig();
 
+    // Check if client with the same name already exists
+    const existingClient = Object.values(config.clients).find(client => client.name === name);
+    if (existingClient) {
+        // Delete existing client
+        delete config.clients[existingClient.id];
+        await this.saveConfig();
+    }
+
     const privateKey = await Util.exec('wg genkey');
     const publicKey = await Util.exec(`echo ${privateKey} | wg pubkey`, {
       log: 'echo ***hidden*** | wg pubkey',
